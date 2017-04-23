@@ -1,12 +1,18 @@
 package com.bignerdranch.android.beatbox;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class BeatBoxActivity extends AppCompatActivity {
+public class BeatBoxActivity extends SingleFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected Fragment createFragment() {
+        return BeatBoxFragment.newInstance();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_beat_box);
     }
